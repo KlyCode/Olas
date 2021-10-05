@@ -1,0 +1,265 @@
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --secundario: #85C1E9;
+    --azulclaro: #7FB3D5;
+    --gris: #E5E8E8;
+    --title-font: 'Comfortaa', cursive;
+    --text-font: 'Roboto', sans-serif;
+}
+
+body {
+    font-size: 18px;
+    /* Fuente de la letra de toda la pagina */
+    font-family: var(--text-font);
+    /* Color de fondo */
+    background-image: linear-gradient(to top, var(--secundario) 0%, var(--blanco) 90%);
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* Tamaño de la pagina */
+    font-size: 65.5%;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--title-font);
+}
+
+h1 {
+    /* Tamaño de letra del tema Proyecto Integrador */
+    font-size: 2.8rem;
+    /* h1 centrado */
+    text-align: center;
+}
+
+h2 {
+    /* Tamaño de letra de todo el h2 */
+    font-size: 2.5rem;
+    /* Texto h2 centrado */
+    text-align: center;
+}
+
+.contenedor {
+    /* Ancho de toda la pagina */
+    max-width: 80rem;
+    margin: 0 auto 0 auto;
+}
+
+
+/* Navegación principal */
+
+.nav-bg {
+    /* Fondo de la barra de botones de navegación Inicio y Menu de tareas */
+    background-color: var(--secundario);
+}
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.navegacion-principal a {
+    display: block;
+    text-align: center;
+    /* Color de las letras */
+    color: var(--blanco);
+    text-decoration: none;
+    /* Tamaño de la letra */
+    font-size: 2rem;
+    /* Gruezo de la letras */
+    font-weight: 900;
+    /* Largo de la barra de nav ( Inicio , Menu de Tareas*/
+    padding: 1rem;
+}
+
+.navegacion-principal a:hover {
+    /* Color de fondo cuando le quieres dar click a (Inicio y Menu de Tareas) */
+    background-color: var(--blanco);
+    /* Color de letra cuando le quieres dar click a (Inicio y Menu de Tareas) */
+    color: var(--oscuro);
+}
+
+
+/* Cuadro gris */
+
+.sombra {
+    /* Sombra del cuadro */
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
+    box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
+    /* Color de fondo */
+    background-color: var(--gris);
+    /* Ancho del cuadro gris */
+    padding: 2rem;
+    /* Redondo de las esquina (Cuadro) */
+    border-radius: 10rem;
+    /* Largo del cuadro */
+    height: infinite;
+}
+
+
+/* Tarea #1 */
+
+p {
+    /* Texto justificado */
+    text-align: justify;
+}
+
+.imagenAdaptable {
+    width: 80%;
+}
+
+.medio {
+    text-align: center;
+}
+
+.img1 {
+    /* Imagen azul centrado */
+    display: flex;
+    justify-content: center;
+}
+
+.contenedorLenguajes {
+    /* imagenes java , C# , PHP */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagenLenguaje {
+    width: 20%;
+    object-fit: contain;
+}
+
+
+/*Botones de Anterior, Superior, Siguiente*/
+
+.button {
+    position: relative;
+    width: 280px;
+    height: 100px;
+    background: transparent;
+    border: 8px solid;
+    color: #212121;
+    background: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 1.8rem;
+    outline: none;
+}
+
+.button::before,
+.button::after {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 10px;
+    background: #85C1E9;
+    transform: skew(-105deg);
+    transition: 0.3s linear;
+}
+
+.button::before {
+    top: -8px;
+    left: 5%;
+}
+
+.button::after {
+    bottom: -8px;
+    right: 5%;
+}
+
+.button:hover::before {
+    left: 50%;
+}
+
+.button:hover::after {
+    right: 50%;
+}
+
+.botones {
+    /* Botones centrados */
+    text-align: center;
+}
+
+    section.efectoOlas {
+        position: absolute;   
+        width: 100%; height: 500px;
+        z-index: -5;
+        bottom: 0;
+        position: fixed;
+    }
+
+    section.efectoOlas .wave {
+        width: 100%; height: 100px;
+        position: absolute;
+        bottom: -300px;
+        left: 0;
+        background: url('wave1.png');
+        background-size: 1000px 100px;
+        
+    }
+
+         section.efectoOlas .wave1 {
+            animation: animate 30s linear infinite;
+            z-index: 100;
+            opacity: 1;
+            animation-delay: 0s;
+            bottom: 0;
+        }
+
+        section.efectoOlas .wave2 {
+            animation: animate2 15s linear infinite;
+            z-index: 999;
+            opacity: 0.5;
+            animation-delay: -5s;
+            bottom: 10px;
+        }
+
+        section.efectoOlas .wave3 {
+            animation: animate 30s linear infinite;
+            z-index: 998;
+            opacity: 0.2;
+            animation-delay: -2s;
+            bottom: 15px;
+        }
+
+        section.efectoOlas .wave4 {
+            animation: animate2 15s linear infinite;
+            z-index: 997;
+            opacity: 0.7;
+            animation-delay: -5s;
+            bottom: 20px;
+        }
+
+
+@keyframes animate {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
